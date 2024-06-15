@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-black text-white
+}
+
+/*
+left sidebar: 275
+right sidebar: 350
+content: auto
+total: 1265
+ */
