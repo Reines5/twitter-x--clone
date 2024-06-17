@@ -1,12 +1,14 @@
 import {NavLink} from "react-router-dom";
 import classNames from "classnames";
 import {mainMenu} from "~/utils/consts.jsx";
+import More from "~/layouts/sidebar/menu/more/index.jsx";
+import Send from "~/layouts/sidebar/menu/send/index.jsx";
 
 export default function Menu() {
     return (
         <nav className="mt-0.5 mb-1">
             {mainMenu.map((menu, index) => (
-                <NavLink to={menu.path} className="py-1 block group">
+                <NavLink to={menu.path} className="py-[5px] block group">
                     {({isActive}) => (
                         <div
                             className={classNames("p-3 rounded-full inline-flex items-center gap-5 group-hover:bg-[#eff3f41a] transition-colors", {
@@ -24,13 +26,17 @@ export default function Menu() {
                                 {isActive && menu.icon.active}
                             </div>
 
-                            <div className="pr-4 text-xl">
+                            <div className="pr-[5px] text-xl">
                                 {menu.title}
                             </div>
                         </div>
                     )}
                 </NavLink>
             ))}
+
+            <More />
+
+            <Send />
         </nav>
     )
 }
