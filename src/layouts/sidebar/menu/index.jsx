@@ -37,6 +37,7 @@ export default function Menu() {
             <More />
 
             <Send />
+
         </nav>
     )
 }
