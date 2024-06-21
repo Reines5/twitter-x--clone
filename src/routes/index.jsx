@@ -44,7 +44,7 @@ const routes = createBrowserRouter([
                 element: <Bookmarks />
             },
             {
-                path: 'profile',
+                path: ':slug',
                 element: <Profile />
             }
         ]

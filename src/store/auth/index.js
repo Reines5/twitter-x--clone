@@ -1,8 +1,26 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    currentAccount: false,
-    accounts: []
+    currentAccount: {
+        id: 1,
+        username: 'freines5',
+        fullName: 'Fatih Enes',
+        avatar: 'https://pbs.twimg.com/profile_images/1660676786122899457/nJ_DGZtd_400x400.jpg'
+    },
+    accounts: [
+        {
+            id: 1,
+            username: 'freines5',
+            fullName: 'Fatih Enes',
+            avatar: 'https://pbs.twimg.com/profile_images/1660676786122899457/nJ_DGZtd_400x400.jpg'
+        },
+        {
+            id: 2,
+            username: 'manji',
+            fullName: 'Fatih Enes',
+            avatar: 'https://pbs.twimg.com/profile_images/1660676786122899457/nJ_DGZtd_400x400.jpg'
+        },
+    ]
 }
 
 const auth = createSlice({

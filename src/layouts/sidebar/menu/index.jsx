@@ -3,12 +3,15 @@ import classNames from "classnames";
 import {mainMenu} from "~/utils/consts.jsx";
 import More from "~/layouts/sidebar/menu/more/index.jsx";
 import Send from "~/layouts/sidebar/menu/send/index.jsx";
+import {useAccount} from "~/store/auth/hooks.js";
 
 export default function Menu() {
+const account = useAccount()
+
     return (
-        <nav className="mt-0.5 mb-1">
+        <nav className="mt-0.5 mb-1" key={account}>
             {mainMenu.map((menu, index) => (
-                <NavLink to={menu.path} className="py-[5px] block group">
+                <NavLink key={index} to={typeof menu.path == 'function' ? menu.path() : menu.path} className="py-[5px] block group">
                     {({isActive}) => (
                         <div
                             className={classNames("p-3 rounded-full inline-flex items-center gap-5 group-hover:bg-[#eff3f41a] transition-colors", {
